@@ -510,6 +510,7 @@ html{
     font-size: 18px;
     letter-spacing: 3px;
     opacity: 0;
+    color: #fff;
 }
 .portfolio .galeria .proyecto .overlay h3{
     margin-bottom: 20px;
@@ -523,7 +524,7 @@ html{
 }
 /* SECCION CONTACTO */
 .contacto{
-    background-image: url(cambiar);
+    /*background-image: url(cambiar);*/
     background-color: #1e2326;
     color: #fff;
     padding: 50px 0;

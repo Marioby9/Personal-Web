@@ -39,3 +39,30 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 } 
+
+//Enviar Correo
+let bEnviar = document.getElementById("enviar");
+let txtNombre = document.getElementById("txtNombre");
+let txtTelefono= document.getElementById("txtTelefono");
+let txtCorreo = document.getElementById("txtCorreo");
+let txtAsunto = document.getElementById("txtAsunto");
+let txtMensaje = document.getElementById("txtMensaje");
+
+
+function enviarCorreo(){
+    let nombre = txtNombre.value;
+    let telefono = txtTelefono.value;
+    let correo = txtCorreo.value;
+    let asunto = txtAsunto.value;
+    let mensaje = txtMensaje.value;
+
+    if(nombre == "" || telefono == "" || correo == "" || asunto == "" || mensaje == ""){
+        alert("Error: Todos los campos deben estar rellenos");
+    }
+    else{
+        alert("Correo enviado correctamente");
+    }
+    
+}
+
+bEnviar.addEventListener("click", enviarCorreo);
