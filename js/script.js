@@ -41,6 +41,8 @@ window.onscroll = function(){
 } 
 
 //Enviar Correo
+let cajaError = document.getElementById("cajaError");
+let msjError = document.getElementById("msjError");
 let bEnviar = document.getElementById("enviar");
 let txtNombre = document.getElementById("txtNombre");
 let txtTelefono= document.getElementById("txtTelefono");
@@ -48,6 +50,13 @@ let txtCorreo = document.getElementById("txtCorreo");
 let txtAsunto = document.getElementById("txtAsunto");
 let txtMensaje = document.getElementById("txtMensaje");
 
+function vaciarCampos(){
+    txtNombre.value = "";
+    txtTelefono.value = "";
+    txtCorreo.value = "";
+    txtAsunto.value = "";
+    txtMensaje.value = "";
+}
 
 function enviarCorreo(){
     let nombre = txtNombre.value;
@@ -59,27 +68,31 @@ function enviarCorreo(){
     let valido = true;
 
     if(nombre == "" || telefono == "" || correo == "" || asunto == "" || mensaje == ""){
-        alert("Error: Todos los campos deben estar rellenos");
+        error += "Todos los campos deben estar rellenos";
+        valido = false;
     }
     else{
         if(isNaN(telefono) || telefono.length != 9){
-            error += "\nEl telefono debe ser un numero de 9 cifras";
+            error += "El telefono debe ser un numero de 9 cifras";
             valido = false;
         }
-        if(correo.search(/@/) == -1 || correo.search(/./) == -1){
-            error += "\nEl formato del correo no es valido";
+        if(valido === true && (correo.search(/@/) == -1 || correo.search(/\./) == -1)){
+            error += "Formato de correo no válido";
             valido = false;
-        }
-
-        if (valido === true){
-            alert("Correo enviado correctamente")
-        }
-        else{
-            alert(error);
         }
  
+    }
+
+    if (valido === true){
+        cajaError.style.display = "none";
+    }
+    else{
+        cajaError.style.display = "flex";
+        msjError.textContent = error;
+        //vaciarCampos();
     }
     
 }
 
 bEnviar.addEventListener("click", enviarCorreo);
+

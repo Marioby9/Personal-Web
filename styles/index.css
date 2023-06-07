@@ -563,6 +563,32 @@ html{
     font-size: 18px;
     resize: none;
 }
+
+/*MENSAJE ERROR FORMULARIO*/ /*LA PRIMERA CAJA ES LA COLUMNA, LA SEGUNDA ES EL DIV CONTENEDOR, LUEGO EL PARRAFO MENSAJE*/
+.contacto .cajaError{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.contacto .cajaError .error{
+    border: 3px solid RED;
+    border-radius: 10px;
+    background-color: rgba(199, 151, 151, 0.91) ;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+
+}
+.contacto .cajaError .error p{
+    text-align: center;
+    margin: 20px;
+    color: #131517;
+    font-family: 'Righteous';
+    font-size: 18px;
+}
+
 .contacto button{
     cursor: pointer;
     background-color: transparent;
