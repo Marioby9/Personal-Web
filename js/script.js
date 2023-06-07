@@ -55,12 +55,29 @@ function enviarCorreo(){
     let correo = txtCorreo.value;
     let asunto = txtAsunto.value;
     let mensaje = txtMensaje.value;
+    let error = "Error: ";
+    let valido = true;
 
     if(nombre == "" || telefono == "" || correo == "" || asunto == "" || mensaje == ""){
         alert("Error: Todos los campos deben estar rellenos");
     }
     else{
-        alert("Correo enviado correctamente");
+        if(isNaN(telefono) || telefono.length != 9){
+            error += "\nEl telefono debe ser un numero de 9 cifras";
+            valido = false;
+        }
+        if(correo.search(/@/) == -1 || correo.search(/./) == -1){
+            error += "\nEl formato del correo no es valido";
+            valido = false;
+        }
+
+        if (valido === true){
+            alert("Correo enviado correctamente")
+        }
+        else{
+            alert(error);
+        }
+ 
     }
     
 }
