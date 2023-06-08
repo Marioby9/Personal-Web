@@ -485,6 +485,43 @@ html{
     text-align: center;
     padding: 20px 0;
 }
+
+/*FILTRAR PORTFOLIO*/
+.portfolio nav{
+    justify-content: center;
+    display: flex;
+    
+}
+.portfolio nav ul{
+    width: fit-content;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 20px;
+}
+.portfolio nav ul li button{
+    background: none;
+    border: none;
+    text-align: none;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+.portfolio nav ul li button:hover{
+    color: #1CB698;
+    text-decoration-color: #1CB698;
+}
+
+.portfolio nav ul li button:focus{
+    color: #1CB698;
+    text-decoration: underline;
+    text-decoration-color: #1CB698;
+}
+
+
 .portfolio .galeria{
     display: flex;
     flex-wrap: wrap;
@@ -658,7 +695,7 @@ footer .redes a{
     width: 42px;
     height: 42px;
     line-height: 42px;
-    margin: 40px 5px;
+    margin: 20px 5px;
     font-size: 20px;
     transition: .3s;
 }
@@ -680,72 +717,6 @@ footer .arriba{
     line-height: 50px;
     font-size: 18px;
 }
-/* SECCION RESPONSIVE */
-@media screen and (max-width:980px){
-    nav{
-        display: none;
-    }
-    .nav-responsive{
-        display: block;
-    }
-    nav.responsive{
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 75px;
-        background-color: #252A2E;
-        width: 180px;
-    }
-    nav.responsive ul{
-        display: block !important;
-    }
-    nav.responsive ul li{
-        border-bottom: 1px solid #fff;
-        padding: 10px 0;
-    }
-}
-@media screen and (max-width:700px){
-    .sobremi .fila{
-        display: block;
-    }
-    .sobremi .fila .col{
-        width: fit-content;
-    }
-
-    .skills .fila{
-        display: block;
-    }
-    .skills .fila .col{
-        width: 100%;
-    }
-    .skills .fila .col .barra-skill{
-        width: 100%;
-    }
-
-    .curriculum .fila{
-        display: block;
-    }
-    .curriculum .fila .col{
-        width: 90%;
-    }
-    .curriculum .fila .derecha{
-        margin-left: 20px;
-    }
-
-    .portfolio .galeria{
-        display: block;
-        width: 100%;
-    }
-    .portfolio .galeria .proyecto{
-        max-width: 100%;
-    }
-    .portfolio .galeria .proyecto img{
-        width: 100%;
-    }
-    .contacto .fila{
-        display: block;
-    }
-    .contacto .fila .col{
-        width: 100%;
-    }
+footer .copy{
+    margin-bottom: 30px;
 }
