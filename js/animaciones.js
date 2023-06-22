@@ -40,7 +40,6 @@ window.onscroll = function(){
     efectoHabilidades();
 } 
 
-
 //Funciones para filtrar los proyectos del portfolio
 const bTodos = document.getElementById("bTodos");
 const bJava = document.getElementById("bJava");
@@ -49,53 +48,20 @@ const bWeb = document.getElementById("bWeb");
 
 const proyectos = Array.from(document.getElementsByClassName("proyecto"));
 
-function mostrarTodos() {
-
+function mostrarProyectos(categoria) {
     proyectos.forEach(proyecto => {
-        proyecto.style.display = "block";
-    })
-}
-
-function mostrarJava() {
-
-    proyectos.forEach(proyecto => {
-        if(proyecto.id === "Java"){
+        if (categoria === "Todos" || proyecto.id === categoria) {
             proyecto.style.display = "block";
-        }
-        else{
+        } else {
             proyecto.style.display = "none";
         }
-    })
+    });
 }
 
-function mostrarPython() {
-
-    proyectos.forEach(proyecto => {
-        if(proyecto.id === "Python"){
-            proyecto.style.display = "block";
-        }
-        else{
-            proyecto.style.display = "none";
-        }
-    })
-}
-
-function mostrarWeb() {
-
-    proyectos.forEach(proyecto => {
-        if(proyecto.id === "Web"){
-            proyecto.style.display = "block";
-        }
-        else{
-            proyecto.style.display = "none";
-        }
-    })
-}
-
-bTodos.addEventListener("click", mostrarTodos);
-bJava.addEventListener("click", mostrarJava);
-bPython.addEventListener("click", mostrarPython);
-bWeb.addEventListener("click", mostrarWeb);
+bTodos.addEventListener("click", () => mostrarProyectos("Todos"));
+bJava.addEventListener("click", () => mostrarProyectos("Java"));
+bPython.addEventListener("click", () => mostrarProyectos("Python"));
+bWeb.addEventListener("click", () => mostrarProyectos("Web"));
 
 
 
