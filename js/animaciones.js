@@ -41,4 +41,64 @@ window.onscroll = function(){
 } 
 
 
+//Funciones para filtrar los proyectos del portfolio
+const bTodos = document.getElementById("bTodos");
+const bJava = document.getElementById("bJava");
+const bPython = document.getElementById("bPython");
+const bWeb = document.getElementById("bWeb");
+
+const proyectos = Array.from(document.getElementsByClassName("proyecto"));
+
+function mostrarTodos() {
+
+    proyectos.forEach(proyecto => {
+        proyecto.style.display = "block";
+    })
+}
+
+function mostrarJava() {
+
+    proyectos.forEach(proyecto => {
+        if(proyecto.id === "Java"){
+            proyecto.style.display = "block";
+        }
+        else{
+            proyecto.style.display = "none";
+        }
+    })
+}
+
+function mostrarPython() {
+
+    proyectos.forEach(proyecto => {
+        if(proyecto.id === "Python"){
+            proyecto.style.display = "block";
+        }
+        else{
+            proyecto.style.display = "none";
+        }
+    })
+}
+
+function mostrarWeb() {
+
+    proyectos.forEach(proyecto => {
+        if(proyecto.id === "Web"){
+            proyecto.style.display = "block";
+        }
+        else{
+            proyecto.style.display = "none";
+        }
+    })
+}
+
+bTodos.addEventListener("click", mostrarTodos);
+bJava.addEventListener("click", mostrarJava);
+bPython.addEventListener("click", mostrarPython);
+bWeb.addEventListener("click", mostrarWeb);
+
+
+
+
+
 

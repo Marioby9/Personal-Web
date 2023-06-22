@@ -149,7 +149,7 @@ html{
 .sobremi .fila .col ul li{
     margin: 12px 0;
 }
-.sobremi .fila .col ul li strong{
+.sobremi .fila .col ul li b{
     display: inline-block;
     color: #1CB698;
     width: 130px;
